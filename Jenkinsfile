@@ -1,5 +1,9 @@
 pipeline {
-    agent any
+    agent {
+        docker {
+            image 'mcr.microsoft.com/playwright:v1.50.1-noble'
+        }
+    }
 
     stages {
         stage('Node.js Deps') {
